@@ -26,3 +26,34 @@
         }
     ]
 }
+
+
+
+{
+    "Name": "Beta",
+    "Actions": [
+        {
+            "Name": "BetaAction",
+            "InputArtifacts": [
+                {
+                    "Name": "SourceOutput"
+                }
+            ],
+            "ActionTypeId": {
+                "Category": "Deploy",
+                "Owner": "AWS",
+                "Version": 2,
+                "Provider": "CodeDeploy"
+            },
+            "Configuration": {
+                "ApplicationName": {
+                    "Ref": "ApplicationName"
+                },
+                "DeploymentGroupName": {
+                    "Ref": "BetaFleet"
+                }
+            },
+            "RunOrder": 1
+        }
+    ]
+}

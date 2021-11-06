@@ -8,7 +8,7 @@
         "RepositoryName": {
             "Description": "GitHub repository name",
             "Type": "String",
-            "Default": "demo-pipe"
+            "Default": "demo-pipe2"
         },
         "GitHubOwner": {
             "Type": "String",
@@ -95,6 +95,7 @@
         },
         "AppPipelineWebhook": {
             "Type": "AWS::CodePipeline::Webhook",
+            "DependsOn": "AppPipeline",
             "Properties": {
                 "Authentication": "GITHUB_HMAC",
                 "AuthenticationConfiguration": {
@@ -144,7 +145,7 @@
                                 "ActionTypeId": {
                                     "Category": "Source",
                                     "Owner": "ThirdParty",
-                                    "Version": 2,
+                                    "Version": 1,
                                     "Provider": "GitHub"
                                 },
                                 "OutputArtifacts": [
@@ -164,9 +165,37 @@
                                     },
                                     "OAuthToken": "{{resolve:secretsmanager:MyGitHubSecret:SecretString:token}}"
                                     ,
-                                    "PollForSourceChanges": false
+                                    "PollForSourceChanges": true
                                 },
                                 "RunOrder": 1
+                            }
+                        ]
+                    },
+                    {
+                        "Name": "Beta",
+                        "Actions": [
+                            {
+                                "Name": "BetaAction",
+                                "InputArtifacts": [
+                                    {
+                                        "Name": "SourceOutput"
+                                    }
+                                ],
+                                "ActionTypeId": {
+                                    "Category": "Deploy",
+                                    "Owner": "AWS",
+                                    "Version": 2,
+                                    "Provider": "CodeDeploy"
+                                },
+                                "Configuration": {
+                                    "ApplicationName": {
+                                        "Ref": "ApplicationName"
+                                    },
+                                    "DeploymentGroupName": {
+                                        "Ref": "BetaFleet"
+                                    }
+                                },
+                                "RunOrder": 2
                             }
                         ]
                     }
