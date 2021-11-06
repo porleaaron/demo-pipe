@@ -4,9 +4,11 @@ phases:
   build:
     commands:
       - echo Build started on `date`
+      - IMAGE_TAG=${COMMIT_HASH:=latest}
   post_build:
     commands:
       - echo Build completed on `date`
+      - printf '[{"name":"%s","imageUri":"%s"}]' $CONTAINER_NAME $REPOSITORY_URI > imagedefinitions.json
 artifacts:
   files:
     - taskdef.json
