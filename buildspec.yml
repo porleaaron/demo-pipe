@@ -10,6 +10,5 @@ phases:
       - echo Build completed on `date`
       - printf '[{"name":"%s","imageUri":"%s"}]' $CONTAINER_NAME $REPOSITORY_URI > ./imagedefinitions.json
 artifacts:
-  files:
-    - **.*
+  files: imagedefinitions.json
   discard-paths: yes
