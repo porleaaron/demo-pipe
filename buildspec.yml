@@ -3,11 +3,13 @@ version: 0.2
 phases:
   build:
     commands:
-      - echo Build started on `date` 
+      - echo Build started on `date`
   post_build:
     commands:
       - echo Build completed on `date`
 artifacts:
   files:
-    - *.*
+    - taskdef.json
+    - appspec.yaml
+    - appspec.yml
   discard-paths: yes
