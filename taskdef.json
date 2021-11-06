@@ -1,0 +1,193 @@
+{
+    "ipcMode": null,
+    "executionRoleArn": "arn:aws:iam::705089718165:role/helloworld-ECSTaskExcutionRole-1RJIAZQ1GN8NF",
+    "containerDefinitions": [
+      {
+        "dnsSearchDomains": [],
+        "environmentFiles": [],
+        "logConfiguration": {
+          "logDriver": "awslogs",
+          "secretOptions": [],
+          "options": {
+            "awslogs-group": "ECSLogGroup-helloworld",
+            "awslogs-region": "us-east-2",
+            "awslogs-stream-prefix": "ecs-demo-app"
+          }
+        },
+        "entryPoint": [],
+        "portMappings": [
+          {
+            "hostPort": 80,
+            "protocol": "tcp",
+            "containerPort": 80
+          }
+        ],
+        "command": [],
+        "linuxParameters": null,
+        "cpu": 256,
+        "environment": [],
+        "resourceRequirements": null,
+        "ulimits": [],
+        "dnsServers": [],
+        "mountPoints": [
+          {
+            "readOnly": null,
+            "containerPath": "/usr/local/apache2/htdocs",
+            "sourceVolume": "my-vol"
+          }
+        ],
+        "workingDirectory": null,
+        "secrets": [],
+        "dockerSecurityOptions": [],
+        "memory": 512,
+        "memoryReservation": null,
+        "volumesFrom": [],
+        "stopTimeout": null,
+        "image": "httpd:2.4",
+        "startTimeout": null,
+        "firelensConfiguration": null,
+        "dependsOn": null,
+        "disableNetworking": null,
+        "interactive": null,
+        "healthCheck": null,
+        "essential": true,
+        "links": [],
+        "hostname": null,
+        "extraHosts": [],
+        "pseudoTerminal": null,
+        "user": null,
+        "readonlyRootFilesystem": null,
+        "dockerLabels": {},
+        "systemControls": [],
+        "privileged": null,
+        "name": "simple-app"
+      },
+      {
+        "dnsSearchDomains": [],
+        "environmentFiles": [],
+        "logConfiguration": {
+          "logDriver": "awslogs",
+          "secretOptions": [],
+          "options": {
+            "awslogs-group": "ECSLogGroup-helloworld",
+            "awslogs-region": "us-east-2",
+            "awslogs-stream-prefix": "ecs-demo-app"
+          }
+        },
+        "entryPoint": [
+          "sh",
+          "-c"
+        ],
+        "portMappings": [],
+        "command": [
+          "/bin/sh -c \"while true; do echo '<html> <head> <title>Amazon ECS Sample App</title> <style>body {margin-top: 40px; background-color: #333;} </style> </head><body> <div style=color:white;text-align:center> <h1>Amazon ECS Sample App</h1> <h2>Congratulations!</h2> <p>Your application is now running on a container in Amazon ECS.</p>' > top; /bin/date > date ; echo '</div></body></html>' > bottom; cat top date bottom > /usr/local/apache2/htdocs/index.html ; sleep 1; done\""
+        ],
+        "linuxParameters": null,
+        "cpu": 10,
+        "environment": [],
+        "resourceRequirements": null,
+        "ulimits": [],
+        "dnsServers": [],
+        "mountPoints": [],
+        "workingDirectory": null,
+        "secrets": [],
+        "dockerSecurityOptions": [],
+        "memory": 200,
+        "memoryReservation": null,
+        "volumesFrom": [
+          {
+            "sourceContainer": "simple-app",
+            "readOnly": null
+          }
+        ],
+        "stopTimeout": null,
+        "image": "busybox",
+        "startTimeout": null,
+        "firelensConfiguration": null,
+        "dependsOn": null,
+        "disableNetworking": null,
+        "interactive": null,
+        "healthCheck": null,
+        "essential": false,
+        "links": [],
+        "hostname": null,
+        "extraHosts": [],
+        "pseudoTerminal": null,
+        "user": null,
+        "readonlyRootFilesystem": null,
+        "dockerLabels": {},
+        "systemControls": [],
+        "privileged": null,
+        "name": "busybox"
+      }
+    ],
+    "placementConstraints": [],
+    "memory": "1024",
+    "taskRoleArn": null,
+    "compatibilities": [
+      "EC2",
+      "FARGATE"
+    ],
+    "taskDefinitionArn": "arn:aws:ecs:us-east-2:705089718165:task-definition/helloworld-ecs-demo-app:1",
+    "family": "helloworld-ecs-demo-app",
+    "requiresAttributes": [
+      {
+        "targetId": null,
+        "targetType": null,
+        "value": null,
+        "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+      },
+      {
+        "targetId": null,
+        "targetType": null,
+        "value": null,
+        "name": "ecs.capability.execution-role-awslogs"
+      },
+      {
+        "targetId": null,
+        "targetType": null,
+        "value": null,
+        "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+      },
+      {
+        "targetId": null,
+        "targetType": null,
+        "value": null,
+        "name": "com.amazonaws.ecs.capability.docker-remote-api.1.17"
+      },
+      {
+        "targetId": null,
+        "targetType": null,
+        "value": null,
+        "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+      },
+      {
+        "targetId": null,
+        "targetType": null,
+        "value": null,
+        "name": "ecs.capability.task-eni"
+      }
+    ],
+    "pidMode": null,
+    "requiresCompatibilities": [
+      "FARGATE"
+    ],
+    "networkMode": "awsvpc",
+    "runtimePlatform": null,
+    "cpu": "512",
+    "revision": 1,
+    "status": "ACTIVE",
+    "inferenceAccelerators": null,
+    "proxyConfiguration": null,
+    "volumes": [
+      {
+        "fsxWindowsFileServerVolumeConfiguration": null,
+        "efsVolumeConfiguration": null,
+        "name": "my-vol",
+        "host": {
+          "sourcePath": null
+        },
+        "dockerVolumeConfiguration": null
+      }
+    ]
+  }

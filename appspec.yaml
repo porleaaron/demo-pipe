@@ -1,0 +1,23 @@
+version: 0.0
+Resources:
+  - TargetService:
+      Type: AWS::ECS::Service
+      Properties:
+        TaskDefinition: "arn:aws:ecs:us-east-2:705089718165:task-definition/helloworld-ecs-demo-app:1"
+        LoadBalancerInfo:
+          ContainerName: "simple-app"
+          ContainerPort: 80
+# Optional properties
+        PlatformVersion: "LATEST"
+        NetworkConfiguration:
+          AwsvpcConfiguration:
+            Subnets: ["subnet-07a969fb6ceb43394", "subnet-025a655b5e93ddca4", "subnet-0b34e6e562203634c"]
+            SecurityGroups: ["sg-0da8ade8438947261"]
+            AssignPublicIp: "ENABLED"
+        CapacityProviderStrategy:
+          - Base: 1
+            CapacityProvider: "FARGATE_SPOT"
+            Weight: 2
+          - Base: 0
+            CapacityProvider: "FARGATE"
+            Weight: 1

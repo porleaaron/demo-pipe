@@ -9,5 +9,5 @@ phases:
       - echo Build completed on `date`
 artifacts:
   files:
-    - appspec.yml
+    - *.*
   discard-paths: yes
