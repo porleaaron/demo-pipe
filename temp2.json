@@ -308,7 +308,7 @@
                     "MinimumHealthyPercent": 75
                 },
                 "DeploymentController":{
-                    "Type":"CODE_DEPLOY"
+                    "Type":"ECS"
                 },
                 "DesiredCount": 1,
                 "LoadBalancers": [
