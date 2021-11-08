@@ -12,18 +12,18 @@ phases:
       - echo Build started on `date`
       - echo Building the Docker image...
       - docker build -t aaron/dev/app:latest
-      - docker tag aaron/dev/app:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/aaron/${ENV}/app:latest
+      - docker tag aaron/dev/app:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/aaron/dev/app:latest
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image..
       # Push the image to ECR.
-      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/aaron/${ENV}/app:latest
+      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/aaron/dev/app:latest
       - echo Completed pushing Docker image. Deploying Docker image to AWS Fargate on `date`
       # Create a artifacts file that contains the name and location of the image
       # pushed to ECR. This will be used by AWS CodePipeline to automate
       # deployment of this specific container to Amazon ECS.
-      - printf '[{"name":"AppContainer","imageUri":"%s"}]' $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/ideka/backend/${ENV}/app:latest > appdefinitions.json
+      - printf '[{"name":"AppContainer","imageUri":"%s"}]' $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/aaron/dev/app:latest > appdefinitions.json
 artifacts:
   # Indicate that the created imagedefinitions.json file created on the previous
   # line is to be referenceable as an artifact of the build execution job.
