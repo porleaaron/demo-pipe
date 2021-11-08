@@ -11,8 +11,8 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...
-      - docker build -t aaron/${ENV}/app:latest
-      - docker tag aaron/${ENV}/app:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/aaron/${ENV}/app:latest
+      - docker build -t aaron/dev/app:latest
+      - docker tag aaron/dev/app:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/aaron/${ENV}/app:latest
   post_build:
     commands:
       - echo Build completed on `date`
