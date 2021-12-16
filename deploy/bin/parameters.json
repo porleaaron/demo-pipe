@@ -1,0 +1,75 @@
+{
+  "git": {
+    "owner": {
+      "parameterName": "/Git/Owner"
+    },
+    "repo": {
+      "parameterName": "/Git/Repo"
+    },
+    "branch": {
+      "parameterName": "/Git/Branch"
+    }
+  },
+  "app": {
+    "database": {
+      "host": {
+        "parameterName": "/App/Database/Host"
+      },
+      "name": {
+        "parameterName": "/App/Database/Name"
+      },
+      "password": {
+        "parameterName": "/App/Database/Password"
+      }
+    },
+    "jwt": {
+      "secret": {
+        "parameterName": "/App/Jwt/Secret"
+      }
+    },
+    "aws": {
+      "access_key": {
+        "parameterName": "/App/Aws/AccessKey"
+      },
+      "secret_key": {
+        "parameterName": "/App/Aws/SecretKey"
+      }
+    },
+    "sendgrid": {
+      "api_key": {
+        "parameterName": "/App/Sendgrid/ApiKey"
+      }
+    },
+    "certificate": {
+      "arn": {
+        "parameterName": "/App/Certificate/Arn"
+      }
+    },
+    "web": {
+      "domain": {
+        "parameterName": "/App/Web/Domain"
+      }
+    },
+    "hook": {
+      "strapi_key": {
+        "parameterName": "/App/Hook/StrapiKey"
+      }
+    },
+    "firebase": {
+      "project_id": {
+        "parameterName": "/App/Firebase/ProjectId"
+      },
+      "private_key": {
+        "parameterName": "/App/Firebase/PrivateKey"
+      },
+      "client_email": {
+        "parameterName": "/App/Firebase/ClientEmail"
+      }
+    },
+    "sentry": {
+      "dsn": {
+        "parameterName": "/App/Sentry/Dsn"
+      }
+    }
+  }
+}

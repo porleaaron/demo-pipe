@@ -1,0 +1,112 @@
+[
+  {
+    "Type": "String",
+    "Name": "/Ideka/$ENV/Git/Owner",
+    "Value": "OwnerName"
+  },
+  {
+    "Type": "String",
+    "Name": "/Ideka/$ENV/Git/Backend/Repo",
+    "Value": "Backend GitRepositoryName"
+  },
+  {
+    "Type": "String",
+    "Name": "/Ideka/$ENV/Git/Backend/Branch",
+    "Value": "Backend BranchName"
+  },
+  {
+    "Type": "String",
+    "Name": "/Ideka/$ENV/Git/Frontend/Repo",
+    "Value": "Frontend GitRepositoryName"
+  },
+  {
+    "Type": "String",
+    "Name": "/Ideka/$ENV/Git/Frontend/Branch",
+    "Value": "Frontend BranchName"
+  },
+  {
+    "Type": "SecureString",
+    "Name": "/Ideka/$ENV/Git/OAuthToken",
+    "Value": "OAuthToken"
+  },
+  {
+    "Type": "SecureString",
+    "Name": "/Ideka/$ENV/Docker/OAuthToken",
+    "Value": "OAuthToken"
+  },
+  {
+    "Type": "String",
+    "Name": "/Ideka/$ENV/App/Database/Host",
+    "Value": "DATABASE_HOST"
+  },
+  {
+    "Type": "String",
+    "Name": "/Ideka/$ENV/App/Database/Name",
+    "Value": "DATABASE_NAME"
+  },
+  {
+    "Type": "SecureString",
+    "Name": "/Ideka/$ENV/App/Database/Password",
+    "Value": "DATABASE_PASSWORD"
+  },
+  {
+    "Type": "SecureString",
+    "Name": "/Ideka/$ENV/App/Jwt/Secret",
+    "Value": "JWT_SECRET"
+  },
+  {
+    "Type": "SecureString",
+    "Name": "/Ideka/$ENV/App/Aws/AccessKey",
+    "Value": "AWS_ACCESS_KEY_ID"
+  },
+  {
+    "Type": "SecureString",
+    "Name": "/Ideka/$ENV/App/Aws/SecretKey",
+    "Value": "AWS_ACCESS_SECRET"
+  },
+  {
+    "Type": "SecureString",
+    "Name": "/Ideka/$ENV/App/Sendgrid/ApiKey",
+    "Value": "SENDGRID_API_KEY"
+  },
+  {
+    "Type": "String",
+    "Name": "/Ideka/$ENV/App/Certificate/Arn",
+    "Value": "CERTIFICATE_ARN"
+  },
+  {
+    "Type": "String",
+    "Name": "/Ideka/$ENV/App/Web/Domain",
+    "Value": "WEB_DOMAIN"
+  },
+  {
+    "Type": "String",
+    "Name": "/Ideka/$ENV/App/Api/BaseUrl",
+    "Value": "API_BASE_URL"
+  },
+  {
+    "Type": "SecureString",
+    "Name": "/Ideka/$ENV/App/Hook/StrapiKey",
+    "Value": "STRAPI_HOOK_KEY"
+  },
+  {
+    "Type": "SecureString",
+    "Name": "/Ideka/$ENV/App/Firebase/ProjectId",
+    "Value": "FIREBASE_PROJECT_ID"
+  },
+  {
+    "Type": "SecureString",
+    "Name": "/Ideka/$ENV/App/Firebase/PrivateKey",
+    "Value": "FIREBASE_PRIVATE_KEY"
+  },
+  {
+    "Type": "SecureString",
+    "Name": "/Ideka/$ENV/App/Firebase/ClientEmail",
+    "Value": "FIREBASE_CLIENT_EMAIL"
+  },
+  {
+    "Type": "SecureString",
+    "Name": "/Ideka/$ENV/App/Sentry/Dsn",
+    "Value": "SENTRY_DSN"
+  }
+]
